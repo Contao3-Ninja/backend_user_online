@@ -1,11 +1,11 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php 
 
 /**
  * Contao Open Source CMS
  * Copyright (C) 2005-2012 Leo Feyer
  *
- * Formerly known as TYPOlight Open Source CMS.
- *
+ * @link http://www.contao.org
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  * 
  * Module Backend User Online
  * 
@@ -15,7 +15,6 @@
  * @package    BackendUserOnline 
  * @license    LGPL 
  */
-
 
 /**
  * DCA Config
@@ -83,5 +82,3 @@ class tl_user_onlineicon extends Backend
 	
 	
 }
-
-?>
