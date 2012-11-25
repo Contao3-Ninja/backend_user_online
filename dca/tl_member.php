@@ -1,11 +1,11 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php 
 
 /**
  * Contao Open Source CMS
  * Copyright (C) 2005-2012 Leo Feyer
  *
- * Formerly known as TYPOlight Open Source CMS.
- *
+ * @link http://www.contao.org
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  * 
  * Module Backend User Online
  * 
@@ -16,19 +16,9 @@
  * @license    LGPL 
  */
 
-
 /**
- * DCA Config
+ * DCA Config, overwrite label_callback
  */
-$GLOBALS['TL_DCA']['tl_member']['list']['label']['fields'] = array('icon', 'firstname', 'lastname', 'username', 'dateAdded', 'currentLogin');
-//unset($GLOBALS['TL_DCA']['tl_member']['fields']['lastLogin']);
-$GLOBALS['TL_DCA']['tl_member']['fields']['currentLogin'] = array
-(
-	'label'   => &$GLOBALS['TL_LANG']['MSC']['tl_member_onlineicon']['lastlogin'],
-	'sorting' => true,
-	'flag'    => 6,
-	'eval'    => array('rgxp'=>'datim')
-);
 $GLOBALS['TL_DCA']['tl_member']['list']['label']['label_callback'] = array('tl_member_onlineicon','addIcon');
 
 /**
@@ -61,21 +51,19 @@ class tl_member_onlineicon extends Backend
 		                                  . " FROM tl_member tlm, tl_session tls"
 		                                  . " WHERE tlm.id = tls.pid AND tlm.id=? AND tls.tstamp>? AND tls.name=?")
 			     				   ->execute($row['id'],time()-300,'FE_USER_AUTH');
-		if ($objUsers->numRows < 1) {
-			//offline
-			$status = sprintf('<img src="%ssystem/themes/%s/images/invisible.gif" width="16" height="16" alt="Offline" style="padding-left: 18px;">', TL_SCRIPT_URL, $this->getTheme());
-		} else {
-			//online
-			$status = sprintf('<img src="%ssystem/themes/%s/images/visible.gif" width="16" height="16" alt="Online" style="padding-left: 18px;">', TL_SCRIPT_URL, $this->getTheme());
-		}
-		if ($row['currentLogin'] == 0)
+		if ($objUsers->numRows < 1) 
 		{
-			$args[5] = $GLOBALS['TL_LANG']['MSC']['tl_member_onlineicon']['lastlogin_never'];
+			//offline
+			$status = sprintf('<img src="%ssystem/themes/%s/images/invisible.gif" width="16" height="16" alt="Offline" style="padding-left: 18px;">', TL_ASSETS_URL, $this->getTheme());
+		} 
+		else 
+		{
+			//online
+			$status = sprintf('<img src="%ssystem/themes/%s/images/visible.gif" width="16" height="16" alt="Online" style="padding-left: 18px;">', TL_ASSETS_URL, $this->getTheme());
 		}
-		
-		$args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/images/%s.gif\'); width: 34px;">%s</div>', TL_SCRIPT_URL, $this->getTheme(), $image, $status);
+
+		$args[0] = sprintf('<div class="list_icon_new" style="background-image:url(\'%ssystem/themes/%s/images/%s.gif\'); width: 34px;">%s</div>', TL_ASSETS_URL, $this->getTheme(), $image, $status);
 		return $args;
 	}
-	
+
 }
-?>
