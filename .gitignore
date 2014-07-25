@@ -2,3 +2,5 @@
 .gitignore
 wiki/
 ER/
+# Transifex
+/.tx/

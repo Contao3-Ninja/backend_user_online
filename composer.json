@@ -1,0 +1,49 @@
+{
+	"name":"bugbuster/backend_user_online",
+	"description":"Contao CMS Online Status Icon for Backend and Frontend User",
+	"keywords":["backend","user","online"],
+	"type":"contao-module",
+	"homepage":"http://www.contao.glen-langer.de",
+	"license":"LGPL-3.0+",
+	"authors":[
+		{
+			"name":"Glen Langer",
+			"homepage":"http://www.contao.glen-langer.de",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"issues":"https://github.com/BugBuster1701/backend_user_online/issues",
+		"irc":"irc://irc.freenode.org/contao.dev",
+		"source":"https://github.com/BugBuster1701/backend_user_online",
+		"wiki":"http://de.contaowiki.org/Backend_User_Online",
+		"forum":"https://community.contao.org/de/forumdisplay.php?119-Sonstige-Erweiterungen"
+	},
+	"require":{
+		"php":">=5.3",
+		"contao/core":">=3.1.2,<4",
+		"contao-community-alliance/composer-plugin": "*"
+	},
+	"autoload":{
+		"classmap":[""]
+	},
+	"replace":{
+		"contao-legacy/backend_user_online":"*"
+	},
+	"extra":{
+		"contao":{
+			"sources":{
+				"":"system/modules/backend_user_online"
+			},
+			"transifex": {
+				"project": "contao-backend_user_online",
+				"prefix": "master-",
+				"languages_cto": "languages",
+				"languages_tx": ".tx"
+			},
+			"runonce":[
+				"runonce/runonce.php"
+			]
+		}
+	}
+}

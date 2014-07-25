@@ -1,19 +1,17 @@
-<?php 
-
+<?php
 /**
- * Contao Open Source CMS, Copyright (C) 2005-2013 Leo Feyer
+ * Translations are managed using Transifex. To create a new translation
+ * or to help to maintain an existing one, please register at transifex.com.
  *
- * Module Backend User Online
+ * @link http://help.transifex.com/intro/translating.html
+ * @link https://www.transifex.com/projects/p/contao-backend_user_online/language/en/
  *
- * @copyright  Glen Langer 2012..2013 <http://www.contao.glen-langer.de>
- * @author     Glen Langer (BugBuster)
- * @package    BackendUserOnline 
- * @license    LGPL
- * @filesource
- * @see	       https://github.com/BugBuster1701/backend_user_online  
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ *
+ * last-updated: 2014-03-21T20:50:26+01:00
  */
 
-/**
- * Back end modules
- */
-$GLOBALS['TL_LANG']['MOD']['backend_user_online'] = array('BackendUserOnline', 'Online Status Icon for Backend and Frontend User');
+
+$GLOBALS['TL_LANG']['MOD']['backend_user_online']['0'] = 'BackendUserOnline';
+$GLOBALS['TL_LANG']['MOD']['backend_user_online']['1'] = 'Online Status Icon for Backend and Frontend User';
+
