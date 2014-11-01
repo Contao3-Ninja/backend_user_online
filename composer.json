@@ -1,7 +1,7 @@
 {
 	"name":"bugbuster/backend_user_online",
 	"description":"Contao CMS Online Status Icon for Backend and Frontend User",
-	"keywords":["backend","user","online"],
+	"keywords":["contao","backend","user","online"],
 	"type":"contao-module",
 	"homepage":"http://www.contao.glen-langer.de",
 	"license":"LGPL-3.0+",
@@ -28,7 +28,7 @@
 		"classmap":[""]
 	},
 	"replace":{
-		"contao-legacy/backend_user_online":"*"
+		"contao-legacy/backend_user_online":"self.version"
 	},
 	"extra":{
 		"contao":{
